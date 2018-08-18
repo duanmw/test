@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryTest</title>
+</head>
+<body>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script> -->
+	<script>
+		$(window).on( 'load', function() {
+		    // do something
+		    console.log("hhahahah");
+		} );
+
+		// $(window).load(function () {//高版本jQuery不支持这样写，见第一种
+		//   console.log("哈哈,小杨好帅哦");
+		// });
+
+		$(document).ready(function () {
+		  console.log("11");
+		});
+
+		// $(function () {
+		//   console.log("页面加载了1");
+		// });
+		$(setTimeout(function(){
+			alert("alal");
+		},2000));
+		jQuery(function(){
+			$("p").click(function(){
+				$(this).css("color","red");
+			});
+		});
+	</script>
+
+
+	<div id="dv">div</div>
+	<p>这是一个p</p>
+	<span class="cls">这是一个span</span>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flex</title>
+</head>
+<style>
+	div{
+		width: 80%;
+		
+		display: flex;
+		border: 1px solid black;
+		justify-content: space-around;
+
+	}
+	p{
+		height :110px;
+		/*width :110px;*/
+		background-color: red;
+		/*flex-grow: 1;*/
+		flex: 1;
+	}
+	p:nth-child(2n){
+		background-color: blue;
+		/*flex-grow: 1;*/
+
+	}
+	p:first-child{
+		/*flex-grow: 1;*/
+	}
+</style>
+<body>
+	<div>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+	
+</body>
+</html>

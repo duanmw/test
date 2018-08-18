@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function getSum(num){
+			if (num==1) {
+				return 1;
+			}
+			return num+getSum(num-1);
+		}
+		// console.log(getSum(100));
+		//123/10=12-3  12/10=1-2 
+		function getNumSum(num){
+			if(num<10){
+				return num;
+			}
+			return num%10+getNumSum(Math.floor(num/10));
+		}
+		console.log(getNumSum(123));
+
+	</script>
+</body>
+</html>

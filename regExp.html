@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//字面量的方式创建正则表达式对象
+		// var reg=/\d{4,5}/;
+		// var reg=/^\w+@\w+\.\w+$/;
+
+		var re1=new RegExp(/\d{3,5}/);
+		var flag=re1.test("a111a.com");
+		console.log(flag);
+
+	</script>
+</body>
+</html>

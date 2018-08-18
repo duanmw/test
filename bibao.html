@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// function f1(){
+		// 	var num=20;
+		// 	var obj={
+		// 		age:num
+		// 	};
+		// 	console.log(obj.age);
+		// }
+		// f1();
+		function f2(){
+			var num=10;
+			return function(){
+				num++;
+				console.log(num);
+			}
+		}
+		var ff=f2();
+		ff();
+		ff();
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机小方块</title>
+	<style>
+		.map{
+			width: 800px;
+			height: 400px;
+			background-color: #ccc;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="map"></div>
+	<script>
+		(function(win){
+			function Random() {
+			    }
+			    Random.prototype.getRandom=function (min,max) {
+			      return Math.floor(Math.random()*(max-min)+min);
+			    };
+			    //把局部对象暴露给window顶级对象,就成了全局的对象
+			    win.Random=new Random();
+		})(window);
+
+		//产生小方块
+		(function(){
+			var map=document.querySelector(".map");
+			function Food(width,height,color){
+				this.width=width||20;
+				this.height=height||20;
+				this.color=color;
+				this.x=0;
+				this.y=0;
+				this.element=document.createElement("div");
+			}
+			Food.prototype.init=function(map){
+				var div=this.element;
+				div.style.position="absolute";
+				div.style.width=this.width+"px";
+				div.style.height=this.height+"px";
+				div.style.backgroundColor=this.color;
+				map.appendChild(div);
+				this.render();
+			}
+			Food.prototype.render=function(){
+				var x=Random.getRandom(0,map.offsetWidth/this.width)*this.width;
+				var y=Random.getRandom(0,map.offsetHeight/this.height)*this.height;
+				this.x=x;
+				this.y=y;
+				this.element.style.left=this.x+"px";
+				this.element.style.top=this.y+"px";
+			}
+			var food=new Food(40,40,"green");
+			food.init(map);
+			console.log(food.x+"--"+food.y);
+		})();
+	</script>
+</body>
+</html>

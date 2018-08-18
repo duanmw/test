@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动</title>
+	<style type="text/css">
+		ul{
+			border: 1px solid green;
+		}
+		li{
+			list-style: none;
+			border: 1px solid #ccc;
+			width: 50px;
+			float: left;
+		}
+		/*.clearfix::after{
+			content: "."; 
+			display: block; 
+			height: 0; 
+			clear: both;
+			visibility: hidden;
+		}*/
+		.clearfix:before,.clearfix:after { 
+	  		content:"";
+  			display:table;  
+  		}
+  		.clearfix:after {
+  		 	clear:both;
+  		}
+
+	</style>
+</head>
+<body>
+	<ul class="clearfix">
+		<li>11</li>
+		<li>22</li>
+		<li>33</li>
+		<li>34</li>
+		<li>56</li>
+	</ul>
+</body>
+</html>

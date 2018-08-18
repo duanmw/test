@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryTest</title>
+	<style type="text/css">
+		div{
+			padding: 30px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script> -->
+	<script>
+		$(function(){
+			$(document).click(function(e){
+				console.log(screenX+"--"+screenY);
+				console.log(e.clientX+"--"+e.clientY);
+			});
+		});
+	</script>
+
+
+	<div id="dv">div<div>dd</div></div>
+	<p>这是一个p</p>
+	<button>按钮</button>
+</body>
+</html>

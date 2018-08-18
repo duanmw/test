@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+	<style>
+		canvas{
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="400" height="300"></canvas>
+	<script>
+		var myCanvas=document.querySelector("canvas");
+		var ctx=myCanvas.getContext("2d");
+		/*分成几等分*/
+		    var num = 6;
+		    /*一份多少弧度*/
+		    var angle = Math.PI * 2 / num;
+
+		    /*原点坐标*/
+		    var x0 = ctx.canvas.width / 2;
+		    var y0 = ctx.canvas.height / 2;
+		    /*获取随机颜色*/
+		    var getRandomColor = function () {
+		        var r = Math.floor(Math.random() * 256);
+		        var g = Math.floor(Math.random() * 256);
+		        var b = Math.floor(Math.random() * 256);
+		        return 'rgb(' + r + ',' + g + ',' + b + ')';
+		    }
+		    for (var i = 0; i < num; i++) {
+		    	var startAngle = i * angle;
+		    	var endAngle = (i + 1) * angle;
+		    	ctx.beginPath();
+		    	ctx.moveTo(x0, y0);
+		    	ctx.arc(x0, y0, 150, startAngle, endAngle);
+		    	/*随机颜色*/
+		    	ctx.fillStyle = getRandomColor();
+		    	ctx.fill();
+		    }
+		    ctx.font = '20px Microsoft YaHei';
+		    ctx.fillText("哈哈呵呵",20,20);
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue动画</title>
+	<style>
+	  /* v-enter 【这是一个时间点】 是进入之前，元素的起始状态，此时还没有开始进入 */
+	  /* v-leave-to 【这是一个时间点】 是动画离开之后，离开的终止状态，此时，元素 动画已经结束了 */
+	  .v-enter,
+	  .v-leave-to {
+	    opacity: 0;
+	    /*transform: translateX(100px);*/
+	    transform: scale(1.5);
+	  }
+
+	  /* v-enter-active 【入场动画的时间段】 */
+	  /* v-leave-active 【离场动画的时间段】 */
+	  .v-enter-active,
+	  .v-leave-active{
+	    transition: all 0.8s ease;
+	  }
+	  #app div{
+	  	width: 200px;
+	  	border: 1px solid #ccc;
+	  	margin: auto;
+	  }
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input type="button" @click='show=!show' value="动画">
+		<transition>
+			<div v-if='show'>This div</div>
+		</transition>
+		
+		
+	</div>
+	
+	<script type="text/javascript" src="js/vue-2.4.0.js"></script>
+	<script>
+		
+		const vm=new Vue({
+			el:'#app',
+			data:{
+				show:false
+			}
+		});
+	</script>
+</body>
+</html>
